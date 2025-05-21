@@ -1,0 +1,9 @@
+[
+    {
+        "resource":"test",
+        "tokenCalculateStrategy":0,
+        "controlBehavior":0,
+        "threshold":2000,
+        "statIntervalInMs":1000
+    }
+]
