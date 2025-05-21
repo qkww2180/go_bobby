@@ -1,4 +1,4 @@
-package ch11
+package ch11_单元测试
 
 import (
 	"fmt"
@@ -8,15 +8,15 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	var dataset = []struct{
-		a int
-		b int
+	var dataset = []struct {
+		a   int
+		b   int
 		out int
 	}{
-		{1,1, 2},
-		{12,12,24},
+		{1, 1, 2},
+		{12, 12, 24},
 		{-9, 8, -1},
-		{0, 0 , 0},
+		{0, 0, 0},
 	}
 
 	for _, value := range dataset {
@@ -33,8 +33,8 @@ func BenchmarkAdd(bb *testing.B) {
 	b = 456
 	c = 579
 
-	for i := 0 ; i < bb.N; i ++ {
-		if actual := add(a,b); actual != c {
+	for i := 0; i < bb.N; i++ {
+		if actual := add(a, b); actual != c {
 			fmt.Printf("%d + %d, except:%d, actual:%d", a, b, c, actual)
 		}
 	}
@@ -45,23 +45,22 @@ const numbers = 10000
 func BenchmarkStringSprintf(b *testing.B) {
 	b.ResetTimer()
 
-	for i := 0; i<b.N; i ++ {
+	for i := 0; i < b.N; i++ {
 		var str string
-		for j :=0; j<numbers; j++ {
-			str = fmt.Sprintf("%s%d", str,j)
+		for j := 0; j < numbers; j++ {
+			str = fmt.Sprintf("%s%d", str, j)
 		}
 	}
 
 	b.StopTimer()
 }
 
-
 func BenchmarkStringAdd(b *testing.B) {
 	b.ResetTimer()
 
-	for i := 0; i<b.N; i ++ {
+	for i := 0; i < b.N; i++ {
 		var str string
-		for j :=0; j<numbers; j++ {
+		for j := 0; j < numbers; j++ {
 			str = str + strconv.Itoa(j)
 		}
 	}
@@ -72,9 +71,9 @@ func BenchmarkStringAdd(b *testing.B) {
 func BenchmarkStringBuilder(b *testing.B) {
 	b.ResetTimer()
 
-	for i := 0; i<b.N; i ++ {
+	for i := 0; i < b.N; i++ {
 		var builder strings.Builder
-		for j :=0; j<numbers; j++ {
+		for j := 0; j < numbers; j++ {
 			builder.WriteString(strconv.Itoa(j))
 		}
 		_ = builder.String()
@@ -82,5 +81,3 @@ func BenchmarkStringBuilder(b *testing.B) {
 
 	b.StopTimer()
 }
-
-

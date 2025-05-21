@@ -29,9 +29,9 @@ func GetEnvInfo(env string) bool {
 func main() {
 	debug := GetEnvInfo("MXSHOP_DEBUG")
 	configFilePrefix := "config"
-	configFileName := fmt.Sprintf("viper_test/ch02/%s-pro.yaml", configFilePrefix)
+	configFileName := fmt.Sprintf("viper_test/ch02_数据类型/%s-pro.yaml", configFilePrefix)
 	if debug {
-		configFileName = fmt.Sprintf("viper_test/ch02/%s-debug.yaml", configFilePrefix)
+		configFileName = fmt.Sprintf("viper_test/ch02_数据类型/%s-debug.yaml", configFilePrefix)
 	}
 
 	v := viper.New()

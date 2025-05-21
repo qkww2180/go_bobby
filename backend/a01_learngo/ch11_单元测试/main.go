@@ -1,4 +1,4 @@
-package ch11
+package ch11_单元测试
 
 //单元测试 go test
 // go test 命令是一个按照一定约定和组织的测试代码驱动程序、 在包目录中， 所有以 _test.go为后缀的源码文件都会被go test运行到
