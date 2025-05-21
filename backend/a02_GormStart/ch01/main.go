@@ -1,20 +1,5 @@
 package main
 
-/**
-
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
-
 import (
 	"database/sql"
 	"log"
@@ -39,9 +24,9 @@ func main() {
 	newLogger := logger.New(
 		log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
 		logger.Config{
-			SlowThreshold: time.Second,   // 慢 SQL 阈值
+			SlowThreshold: time.Second, // 慢 SQL 阈值
 			LogLevel:      logger.Info, // Log level
-			Colorful:      true,         // 禁用彩色打印
+			Colorful:      true,        // 禁用彩色打印
 		},
 	)
 
@@ -64,13 +49,13 @@ func main() {
 
 	// Read
 	var product Product
-	db.First(&product, 1) // 根据整形主键查找
+	db.First(&product, 1)                 // 根据整形主键查找
 	db.First(&product, "code = ?", "D42") // 查找 code 字段值为 D42 的记录
 
 	// Update - 将 product 的 price 更新为 200
 	db.Model(&product).Update("Price", 200)
 	// Update - 更新多个字段
-	db.Model(&product).Updates(Product{Price: 200, Code:sql.NullString{"", true}}) // 仅更新非零值字段
+	db.Model(&product).Updates(Product{Price: 200, Code: sql.NullString{"", true}}) // 仅更新非零值字段
 	//如果我们去更新一个product 只设置了price：200
 	//db.Model(&product).Updates(map[string]interface{}{"Price": 200, "Code": "F42"})
 

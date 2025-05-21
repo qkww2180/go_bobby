@@ -1,20 +1,5 @@
 package main
 
-/**
-
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
-
 import (
 	"log"
 	"os"
@@ -26,8 +11,8 @@ import (
 )
 
 type User struct {
-	UserID        uint `gorm:"primarykey"`
-	Name string `gorm:"column:user_name;type:varchar(50);index:idx_user_name;unique;default:'bobby'"`
+	UserID uint   `gorm:"primarykey"`
+	Name   string `gorm:"column:user_name;type:varchar(50);index:idx_user_name;unique;default:'bobby'"`
 }
 
 func main() {
@@ -37,9 +22,9 @@ func main() {
 	newLogger := logger.New(
 		log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
 		logger.Config{
-			SlowThreshold: time.Second,   // 慢 SQL 阈值
+			SlowThreshold: time.Second, // 慢 SQL 阈值
 			LogLevel:      logger.Info, // Log level
-			Colorful:      true,         // 禁用彩色打印
+			Colorful:      true,        // 禁用彩色打印
 		},
 	)
 

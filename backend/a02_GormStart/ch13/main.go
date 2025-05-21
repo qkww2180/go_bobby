@@ -1,20 +1,5 @@
 package main
 
-/**
-
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
-
 import (
 	"database/sql"
 	"gorm.io/gorm/schema"
@@ -29,7 +14,7 @@ import (
 
 type Language struct {
 	gorm.Model
-	Name string
+	Name    string
 	AddTime sql.NullTime //每个记录创建的时候自动加上当前时间加入到AddTime中
 }
 
@@ -37,7 +22,6 @@ type Language struct {
 //	l.AddTime = time.Now()
 //	return
 //}
-
 
 //在gorm中可以通过给某一个struct添加TableName方法来自定义表名
 //func (Language) TableName() string{
@@ -64,7 +48,7 @@ func main() {
 	// 全局模式
 	//NamingStrategy和Tablename不能同时配置，
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
-		NamingStrategy:schema.NamingStrategy{
+		NamingStrategy: schema.NamingStrategy{
 			TablePrefix: "mxshop_",
 		},
 		Logger: newLogger,
@@ -75,6 +59,6 @@ func main() {
 
 	db.AutoMigrate(&Language{})
 	db.Create(&Language{
-		Name:"python",
+		Name: "python",
 	})
 }

@@ -1,20 +1,5 @@
 package main
 
-/**
-
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
-
 import (
 	"fmt"
 	"log"
@@ -40,7 +25,7 @@ type Language struct {
 /*
 1. 我们自己定义表名是什么
 2. 统一的给所有的表名加上一个前缀
- */
+*/
 func main() {
 	// 参考 https://github.com/go-sql-driver/mysql#dsn-data-source-name 获取详情
 	dsn := "root:root@tcp(192.168.0.104:3306)/gorm_test?charset=utf8mb4&parseTime=True&loc=Local"
@@ -85,7 +70,7 @@ func main() {
 	db.First(&user)
 	var laguages []Language
 	_ = db.Model(&user).Association("Languages").Find(&laguages)
-	for _, language := range laguages{
+	for _, language := range laguages {
 		fmt.Println(language.Name)
 	}
 }

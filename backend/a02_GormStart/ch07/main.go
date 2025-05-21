@@ -1,20 +1,5 @@
 package main
 
-/**
-
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
-
 import (
 	"database/sql"
 	"log"
@@ -28,7 +13,7 @@ import (
 
 type User struct {
 	ID           uint
-	MyName         string `gorm:"column:name"`
+	MyName       string `gorm:"column:name"`
 	Email        *string
 	Age          uint8
 	Birthday     *time.Time
@@ -37,8 +22,6 @@ type User struct {
 	CreatedAt    time.Time
 	UpdatedAt    time.Time
 }
-
-
 
 func main() {
 	// 参考 https://github.com/go-sql-driver/mysql#dsn-data-source-name 获取详情

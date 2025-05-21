@@ -1,20 +1,7 @@
 import request from '@/utils/request'
 
 
-/**
 
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
 
 let host = 'http://shop.projectsedu.com';
 // let baseUrl = "http://39.107.30.137:8000"

@@ -1,20 +1,5 @@
 package main
 
-/**
-
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
-
 import (
 	"fmt"
 	"log"
@@ -63,9 +48,9 @@ func main() {
 
 	//在大型的系统中，我个人不建议使用外键约束，外键约束也有很大的优点： 数据的完整性
 	/*
-	外键约束会让给你的数据很完整，即使是业务代码有些人考虑的不严谨
-	在大型的系统，高并发的系统中一般不使用外键约束，自己在业务层面保证数据的一致性
-	 */
+		外键约束会让给你的数据很完整，即使是业务代码有些人考虑的不严谨
+		在大型的系统，高并发的系统中一般不使用外键约束，自己在业务层面保证数据的一致性
+	*/
 	//user := User{}
 	//db.Create(&user)
 	//db.Create(&CreditCard{
@@ -78,7 +63,7 @@ func main() {
 	//})
 	var user User
 	db.Preload("CreditCards").First(&user)
-	for _, card := range user.CreditCards{
+	for _, card := range user.CreditCards {
 		fmt.Println(card.Number)
 	}
 

@@ -2,31 +2,16 @@ package main
 
 import "fmt"
 
-/**
-
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
-
 type Person struct {
 	name string
 }
 
-//接收者
+// 接收者
 func (pn *Person) SayHello() {
 
 }
 
-//通过指针交换两个值
+// 通过指针交换两个值
 func swap(a, b *int) {
 	//a篮子中存放b篮子中的值， b篮子中存放a篮子的值 好像没有问题
 	//临时值
@@ -56,7 +41,7 @@ func main() {
 	//指针的定义
 	//var po *Person
 	po := &Person{
-		name:"bobby2",
+		name: "bobby2",
 	}
 
 	//(*po).name = "bobby3"
@@ -84,7 +69,7 @@ func main() {
 	var pp = new(Person) //第三种初始化方式
 	fmt.Println(pp.name)
 
-	a, b := 1,2
-	swap(&a,&b)
+	a, b := 1, 2
+	swap(&a, &b)
 	fmt.Println(a, b)
 }

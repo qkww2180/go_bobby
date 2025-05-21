@@ -1,20 +1,5 @@
 package main
 
-/**
-
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
-
 import (
 	"fmt"
 	"strconv"
@@ -40,10 +25,10 @@ func main() {
 	address := "北京"
 	mobile := "18989898989"
 
-	var ages []int = []int{1,2,3}
+	var ages []int = []int{1, 2, 3}
 
-	fmt.Println("用户名: " + username, ",年龄: "+strconv.Itoa(age) + ",地址: "+address, ", 电话: "+mobile)//极难维护
-	fmt.Printf("用户名:%s, 年龄: %d, ,地址:%s, 电话: %s\r\n", username, age, address, mobile) //这个非常的常用， 但是性能没有上面的好
+	fmt.Println("用户名: "+username, ",年龄: "+strconv.Itoa(age)+",地址: "+address, ", 电话: "+mobile) //极难维护
+	fmt.Printf("用户名:%s, 年龄: %d, ,地址:%s, 电话: %s\r\n", username, age, address, mobile)          //这个非常的常用， 但是性能没有上面的好
 	userMsg := fmt.Sprintf("用户名:%T, 年龄: %T, ,地址:%s, 电话: %s\r\n", ages, age, address, mobile)
 	fmt.Println(userMsg)
 

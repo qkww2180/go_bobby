@@ -3,20 +3,7 @@
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.17.3
 // source: goods.proto
-/**
 
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
 package proto
 
 import (

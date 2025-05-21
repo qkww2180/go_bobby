@@ -6,20 +6,7 @@ var Proxy = require('./proxy');
 var fs = require('fs')
 // 定义文件夹的路径
 var ROOT_PATH = path.resolve(__dirname);
-/**
 
-此课程提供者：微信imax882
-
-+微信imax882
-办理会员 课程全部免费看
-
-课程清单：https://leaaiv.cn
-
-全网最全 最专业的 一手课程
-
-成立十周年 会员特惠 速来抢购
-
-**/
 module.exports = {
 	devtool: 'source-map', // 配置生成Source Maps 选择合适的选项
 	// entry: './app/main.js', // 入口文件
